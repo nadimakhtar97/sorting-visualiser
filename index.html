@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sorting-visualiser</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <navbar class="nav">
+        <h1>sorting visualiser</h1>
+    </navbar>
+
+    <section class="hero">
+
+        
+            <section class="visualiser">
+                <div class="bars"></div>
+            </section>
+
+
+        <section class="functions">
+            <div class="controller">
+                <div class="slider">
+                    <input type="range" min="0" max="300" value="150" class="array-size" />
+                    <label>size</label>
+                </div>
+                <div class="animation-speed slider">
+                    <input type="range" min="10" max="300" value="150" />
+                    <label>speed</label>
+                </div>
+            </div>
+
+            <div class="sorting-algo">
+                <button class="btn algo-btn insertion-sort">insertion sort</button>
+                <button class="btn algo-btn selection-sort">selection sort</button>
+                <button class="btn algo-btn merge-sort">merge sort</button>
+                <button class="btn algo-btn quick-sort">quick sort</button>
+            </div>
+
+            <button class="btn new-array-btn">new array</button>
+
+        </section>
+    </section>
+
+
+    <script src="./index.js"></script>
+    <script src="./sorting-algorithms/merge-sort.js"></script>
+</body>
+
+</html>
