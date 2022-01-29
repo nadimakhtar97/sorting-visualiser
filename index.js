@@ -1,21 +1,24 @@
 // SWAP FUNCTION TO SWAP TWO DOM ELEMENTS
-function swap(element1,element2)
+export function swap(element1,element2)
 {
-    console.log("in swap function");
     const temp = element1.style.height;
+    const tempInnerText = element1.innerText;
+    console.log(element2.innerText);
     element1.style.height = element2.style.height;
-    element2.style.height = temp.style.height;
+    element1.innerText = element2.innerText;
+    element2.style.height = temp;
+    element2.innerText = tempInnerText;
 }
 
 
 // CREATE NEW RANDOM ARRAY FOR BARS
-function createNewArray(numberOfBars=150){
+function createNewArray(numberOfBars=20){
 
     clearPrevBars();
     let arr = [];
     for(let i = 0;i<numberOfBars;i++)
-    arr.push(Math.round(Math.random()*500));
-    // console.log(arr);
+    arr.push(Math.floor(Math.random() * (400 - 20 + 1) ) + 20);
+    console.log(arr);
 
     const bars = document.querySelector(".bars");
 
@@ -24,7 +27,8 @@ function createNewArray(numberOfBars=150){
     function addBarToBars(height,index,arr)
     {
         const bar = document.createElement("div");
-        bar.style.height = `${height}px`;
+        bar.style.height = `${height*1.5}px`;
+        bar.innerText = height;
         bar.classList.add('bar');
         bars.appendChild(bar);
     }
@@ -53,7 +57,7 @@ newArrayBtn.addEventListener('click',()=>{
 
 
 // SELECTING SPEED SLIDER FROM DOM
-const speed = document.querySelector(".animation-speed");
+export const speed = document.querySelector(".animation-speed");
 speed.addEventListener('input',(e)=>{
     speed.value = e.target.value;
     // console.log(speed.value);
@@ -69,7 +73,7 @@ function clearPrevBars()
 
 // HELPER FUNCITON TO CREATE DELAY USING PROMISE.
 
-const passTime = (speed) => { 
+export const passTime = (speed) => { 
     return new Promise((resolve,reject) => {
         const delay = 300 - speed.value;
         setTimeout(() => {resolve('')}, delay);

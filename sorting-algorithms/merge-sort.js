@@ -1,3 +1,4 @@
+import {swap,passTime,speed} from '../index.js';
 
 async function merge(elements, left, mid, right) {
     const nL = mid - left + 1;
